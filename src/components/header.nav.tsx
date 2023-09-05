@@ -2,22 +2,30 @@ import HeaderNavLink from "./header.nav.link";
 import { Link } from "react-router-dom";
 import Logo from "../assets/shared/desktop/logo.svg";
 import Cart from "../assets/shared/desktop/icon-cart.svg";
+import iconHamburger from "../assets/shared/tablet/icon-hamburger.svg";
 
 const HeaderNav = () => {
   return (
-    <div className="flex justify-between py-8 border-b-px1 border-white/20">
-      <Link to={"/"}>
-        <img src={Logo} />
-      </Link>
-      <div className="flex gap-10">
-        <HeaderNavLink link={"/"} title={"HOME"} />
-        <HeaderNavLink link={"/"} title={"HEADPHONES"} />
-        <HeaderNavLink link={"/"} title={"SPEAKERS"} />
-        <HeaderNavLink link={"/"} title={"EARPHONES"} />
+    <div className="flex justify-center items-center w-full">
+      <div className="w-11/12 sm:w-full flex justify-between py-8 border-b-px1 border-white/20">
+        <div className="flex gap-5">
+          <button className="lg:hidden">
+            <img src={iconHamburger} />
+          </button>
+          <Link to={"/"}>
+            <img src={Logo} />
+          </Link>
+        </div>
+        <div className="hidden lg:flex gap-10">
+          <HeaderNavLink link={"/"} title={"HOME"} />
+          <HeaderNavLink link={"/"} title={"HEADPHONES"} />
+          <HeaderNavLink link={"/"} title={"SPEAKERS"} />
+          <HeaderNavLink link={"/"} title={"EARPHONES"} />
+        </div>
+        <button className="text-white">
+          <img src={Cart} />
+        </button>
       </div>
-      <button className="text-white">
-        <img src={Cart} />
-      </button>
     </div>
   );
 };

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        customBlack: "#101010",
+        customBlack: "#191919",
         customOrange: "#D87D4A",
         customOrangeLight: "#fbaf85",
         customGray: "#F1F1F1",
@@ -15,6 +15,7 @@ export default {
       },
       width: {
         customWidth: "1110px",
+        customTabletWidth: "790",
       },
       borderWidth: {
         px1: "1px",
