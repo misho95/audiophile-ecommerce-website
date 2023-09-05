@@ -13,6 +13,12 @@ export default {
       height: {
         headerDesktop: "729px",
       },
+      width: {
+        customWidth: "1110px",
+      },
+      borderWidth: {
+        px1: "1px",
+      },
     },
   },
   plugins: [],
