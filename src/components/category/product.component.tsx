@@ -1,7 +1,11 @@
 import productImage from "../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
 import Button from "../home/button";
 
-const ProductComponent = ({ type }) => {
+interface PropsType {
+  type: string;
+}
+
+const ProductComponent = ({ type }: PropsType) => {
   return (
     <div className="w-full md:h-h720 lg:h-h560 flex flex-col lg:flex-row gap-5">
       <div className=" lg:hidden w-full lg:w-1/2 bg-customGray">
