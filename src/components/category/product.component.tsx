@@ -11,7 +11,10 @@ interface PropsType {
 
 const ProductComponent = ({ id, title, img, des, type, ifNew }: PropsType) => {
   return (
-    <div className="w-full md:h-h720 lg:h-h560 flex flex-col lg:flex-row gap-5">
+    <div
+      key={id}
+      className="w-full md:h-h720 lg:h-h560 flex flex-col lg:flex-row gap-5"
+    >
       <div className=" lg:hidden w-full lg:w-1/2 bg-customGray">
         <img
           src={img}
