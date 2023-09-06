@@ -1,6 +1,6 @@
-import HeaderNav from "./header.nav";
+import HeaderNav from "../header/header.nav";
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <div className="bg-customBlack h-headerDesktop flex justify-center items-start">
       <div className="w-full md:w-4/5 lg:w-customWidth h-full flex flex-col">
@@ -25,4 +25,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomeHeader;

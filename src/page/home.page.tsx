@@ -1,9 +1,11 @@
-import Header from "../components/header";
+import CategoryList from "../components/home/category.list";
+import HomeHeader from "../components/home/home.header";
 
 const HomePage = () => {
   return (
     <div>
-      <Header />
+      <HomeHeader />
+      <CategoryList />
     </div>
   );
 };

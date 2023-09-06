@@ -12,10 +12,14 @@ export default {
       },
       height: {
         headerDesktop: "729px",
+        h284: "284px",
+        h217: "217px",
       },
       width: {
         customWidth: "1110px",
-        customTabletWidth: "790",
+        customTabletWidth: "770",
+        px350: "350px",
+        w223: "223px",
       },
       borderWidth: {
         px1: "1px",
