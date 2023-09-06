@@ -1,4 +1,5 @@
 import HeaderNav from "../header/header.nav";
+import Button from "./button";
 
 const HomeHeader = () => {
   return (
@@ -15,9 +16,7 @@ const HomeHeader = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <button className="bg-customOrange w-40 h-12 text-white">
-              SEE PRODUCT
-            </button>
+            <Button type={"orange"} />
           </div>
         </div>
       </div>

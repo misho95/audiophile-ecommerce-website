@@ -23,6 +23,7 @@ export default {
       width: {
         customWidth: "1110px",
         customTabletWidth: "770",
+        w540: "540px",
         px350: "350px",
         w223: "223px",
       },
