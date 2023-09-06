@@ -32,6 +32,11 @@ export default {
       borderWidth: {
         px1: "1px",
       },
+      backgroundImage: {
+        header_bg_mobile: "url('src/assets/home/mobile/image-header.jpg')",
+        header_bg_tablet: "url('src/assets/home/tablet/image-header.jpg')",
+        header_bg_desktop: "url('src/assets/home/desktop/image-hero.jpg')",
+      },
     },
   },
   plugins: [],
