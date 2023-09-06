@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
-const HeaderNavLink = ({ link, title }) => {
+interface PropsType {
+  link: string;
+  title: string;
+}
+
+const HeaderNavLink = ({ link, title }: PropsType) => {
   return (
     <Link
       to={link}

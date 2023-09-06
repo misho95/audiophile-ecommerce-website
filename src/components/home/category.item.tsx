@@ -1,6 +1,11 @@
 import IconArrowRight from "../../assets/shared/desktop/icon-arrow-right.svg";
 
-const CategoryItem = ({ imgLink, category }) => {
+interface PropsType {
+  imgLink: string;
+  category: string;
+}
+
+const CategoryItem = ({ imgLink, category }: PropsType) => {
   return (
     <div className="w-full h-full md:w-w223 md:h-h217 lg:h-h284 lg:w-px350 relative flex flex-col justify-center items-center bg-customGray p-6">
       <img src={imgLink} className="w-32 h-40 object-cover" />

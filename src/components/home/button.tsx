@@ -1,4 +1,8 @@
-const Button = ({ type }) => {
+interface PropsType {
+  type: string;
+}
+
+const Button = ({ type }: PropsType) => {
   return (
     <button
       className={`${
