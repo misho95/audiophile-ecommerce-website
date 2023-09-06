@@ -1,3 +1,4 @@
+import AdsComponent from "../components/ads.component";
 import Footer from "../components/footer";
 import CategoryList from "../components/home/category.list";
 import HomeHeader from "../components/home/home.header";
@@ -9,6 +10,7 @@ const HomePage = () => {
       <HomeHeader />
       <CategoryList />
       <ProductComponent />
+      <AdsComponent />
       <Footer />
     </div>
   );

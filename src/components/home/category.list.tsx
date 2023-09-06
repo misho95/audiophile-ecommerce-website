@@ -7,9 +7,9 @@ const CategoryList = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <div className="w-11/12 md:w-customTabletWidth lg:w-customWidth flex flex-col sm:flex-row justify-between gap-3">
-        <CategoryItem imgLink={categoryImg1} category={"HEADPHONES"} />
-        <CategoryItem imgLink={categoryImg2} category={"EARPHONES"} />
-        <CategoryItem imgLink={categoryImg3} category={"SPEAKERS"} />
+        <CategoryItem imgLink={categoryImg1} category={"headphones"} />
+        <CategoryItem imgLink={categoryImg2} category={"earphones"} />
+        <CategoryItem imgLink={categoryImg3} category={"speakers"} />
       </div>
     </div>
   );

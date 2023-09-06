@@ -13,9 +13,9 @@ const Footer = () => {
           <img src={Logo} className="w-fit h-fit" />
           <div className="text-white flex flex-col sm:flex-row gap-5 justify-center items-center sm:justify-normal sm:items-start">
             <Link to="/">HOME</Link>
-            <Link to="/">HEADPHONES</Link>
-            <Link to="/">SPEAKERS</Link>
-            <Link to="/">EARPHONES</Link>
+            <Link to="/category/headphones">HEADPHONES</Link>
+            <Link to="/category/speakers">SPEAKERS</Link>
+            <Link to="/category/earphones">EARPHONES</Link>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-10">
@@ -34,27 +34,9 @@ const Footer = () => {
             <img src={twitterIcon} className="w-fit h-fit" />
           </div>
         </div>
-        {/* <div className="flex gap-5 justify-center items-center sm:hidden">
-          <img src={faceBookIcon} className="w-fit h-fit" />
-          <img src={instagramIcon} className="w-fit h-fit" />
-          <img src={twitterIcon} className="w-fit h-fit" />
-        </div> */}
       </div>
     </div>
   );
 };
 
 export default Footer;
-
-{
-  /* <div className="w-1/2 flex flex-col gap-5 h-full pt-20">
-
-
-</div>
-<div className="w-1/2 h-full flex flex-col gap-20 justify-start items-end pt-20">
-
-<div className="flex gap-5">
-
-</div>
-</div> */
-}
