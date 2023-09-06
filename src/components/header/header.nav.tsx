@@ -18,9 +18,9 @@ const HeaderNav = () => {
         </div>
         <div className="hidden lg:flex gap-10">
           <HeaderNavLink link={"/"} title={"HOME"} />
-          <HeaderNavLink link={"/"} title={"HEADPHONES"} />
-          <HeaderNavLink link={"/"} title={"SPEAKERS"} />
-          <HeaderNavLink link={"/"} title={"EARPHONES"} />
+          <HeaderNavLink link={"/category/headphones"} title={"HEADPHONES"} />
+          <HeaderNavLink link={"/category/speakers"} title={"SPEAKERS"} />
+          <HeaderNavLink link={"/category/earphones"} title={"EARPHONES"} />
         </div>
         <button className="text-white">
           <img src={Cart} />
