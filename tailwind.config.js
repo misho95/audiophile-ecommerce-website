@@ -14,9 +14,11 @@ export default {
       height: {
         headerDesktop: "729px",
         h720: "720px",
+        h654: "654px",
         h600: "600px",
         h560: "560px",
         h493: "493px",
+        h365: "365px",
         h284: "284px",
         h217: "217px",
       },

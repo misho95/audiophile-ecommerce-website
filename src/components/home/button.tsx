@@ -7,9 +7,7 @@ const Button = ({ type }) => {
           : type === "gray"
           ? "bg-customDarkGray text-white"
           : "bg-transparent text-black"
-      }  w-40 h-12 text-white ${
-        type === "outline" ? "border-px1 border-black" : ""
-      }`}
+      }  w-40 h-12 ${type === "outline" ? "border-px1 border-black" : ""}`}
     >
       SEE PRODUCT
     </button>

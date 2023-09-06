@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import CategoryList from "../components/home/category.list";
 import HomeHeader from "../components/home/home.header";
 import ProductComponent from "../components/home/product.component";
@@ -8,6 +9,7 @@ const HomePage = () => {
       <HomeHeader />
       <CategoryList />
       <ProductComponent />
+      <Footer />
     </div>
   );
 };
