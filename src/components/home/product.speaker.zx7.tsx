@@ -7,7 +7,7 @@ const SpeakerZx7 = () => {
       <img src={speakerHome} className="h-full object-cover md:object-auto" />
       <div className="absolute top-1/2 -translate-y-1/2 left-20 flex flex-col gap-3">
         <h1 className="font-bold text-4xl">ZX7 SPEAKER</h1>
-        <Button type={"outline"} link="/" />
+        <Button type={"outline"} link="/product/5" />
       </div>
     </div>
   );

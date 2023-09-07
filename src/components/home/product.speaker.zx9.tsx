@@ -31,7 +31,7 @@ const SpeakerZx9 = () => {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Button type={"gray"} link="/" />
+        <Button type={"gray"} link="/product/4" />
       </div>
     </div>
   );
