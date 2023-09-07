@@ -39,6 +39,7 @@ const Product = () => {
               price={data.price}
               feat={data.feat}
               inBox={data.inBox}
+              proImg={data.proImg}
             />
           )}
         </div>

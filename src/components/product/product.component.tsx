@@ -10,6 +10,7 @@ interface PropsType {
   price: string;
   feat: string;
   inBox: {};
+  proImg: string[];
 }
 
 const ProductComponent = ({
@@ -22,6 +23,7 @@ const ProductComponent = ({
   price,
   feat,
   inBox,
+  proImg,
 }: PropsType) => {
   const [count, setCount] = useState(1);
 
@@ -33,6 +35,24 @@ const ProductComponent = ({
     if (count !== 0) {
       setCount(count - 1);
     }
+  };
+
+  const renderInBox = () => {
+    const elements = [];
+
+    for (const key in inBox) {
+      if (inBox.hasOwnProperty(key)) {
+        const value = inBox[key];
+        elements.push(
+          <div key={key} className="flex gap-3">
+            <span className="text-customOrange">{value}</span>
+            {key}
+          </div>
+        );
+      }
+    }
+
+    return elements;
   };
 
   useEffect(() => {
@@ -95,14 +115,31 @@ const ProductComponent = ({
           </div>
         )}
       </div>
-      <div className="flex gap-6">
-        <div className="flex flex-col gap-6">
+      <div className="flex flex-col lg:flex-row gap-10 w-full">
+        <div className="flex flex-col gap-6 w-full lg:w-fit">
           <h1 className="text-4xl">FEATURES</h1>
           <p>{feat}</p>
         </div>
-        <div>
+        <div className="w-full lg:w-80 flex flex-col gap-6">
           <h1 className="text-4xl">IN THE BOX</h1>
+          <div>{renderInBox()}</div>
         </div>
+      </div>
+      <div className="h-fit md:h-h368 lg:h-h592 flex flex-col md:flex-row gap-10 justify-center">
+        <div className="h-h368 lg:h-h592 flex flex-col gap-5 justify-between">
+          <img
+            src={proImg[0]}
+            className="rounded-lg w-fit h-fit md:h-h174 lg:h-fit"
+          />
+          <img
+            src={proImg[1]}
+            className="rounded-lg w-fit h-fit md:h-h174 lg:h-fit"
+          />
+        </div>
+        <img
+          src={proImg[2]}
+          className="w-fit h-fit md:w-w395 lg:w-w635 md:h-h368 lg:h-h592 rounded-lg mt-20 sm:mt-0"
+        />
       </div>
     </div>
   );
