@@ -19,7 +19,7 @@ const AdsComponent = () => {
         <div className="w-full lg:w-1/2 flex justify-center items-center">
           <div className="flex flex-col gap-10 w-full lg:w-w445 h-h295">
             <h1 className="text-5xl text-center lg:text-left">
-              Bringing you the <span className="text-customOrange">best</span>
+              Bringing you the <span className="text-customOrange">best</span>{" "}
               audio gear
             </h1>
             <p className="text-black/50 text-center lg:text-left">
