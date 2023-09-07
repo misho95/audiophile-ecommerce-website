@@ -1,31 +1,19 @@
-import CategoryHeader from "../components/category/category.header";
-import CategoryPage from "../components/category/category.page";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import CategoryList from "../components/home/category.list";
-import AdsComponent from "../components/ads.component";
-import Footer from "../components/footer";
+import ProductComponent from "../components/product/product.component";
 import XX99IMG2 from "../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
 import XX99IMG1 from "../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
 import XX59IMG from "../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
 import ZX9IMG from "../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg";
 import ZX7IMG from "../assets/product-zx7-speaker/desktop/image-category-page-preview.jpg";
 import YX1IMG from "../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
+import { useEffect, useState } from "react";
+import ProductHeader from "../components/product/product.header";
+import CategoryList from "../components/home/category.list";
+import AdsComponent from "../components/ads.component";
+import Footer from "../components/footer";
+import { dataType } from "./category";
 
-export interface dataType {
-  id: number;
-  img: string;
-  title: string;
-  ifNew: boolean;
-  category: string;
-  des: string;
-  price: string;
-}
-
-const Category = () => {
-  const { category } = useParams();
-  const [data, setData] = useState<dataType[] | undefined>();
-
+const Product = () => {
   const dataObject = [
     {
       id: 1,
@@ -83,21 +71,39 @@ const Category = () => {
     },
   ];
 
+  const { id } = useParams();
+  const [data, setData] = useState<dataType | undefined>();
+
   useEffect(() => {
-    const filter = dataObject.filter((data) => {
-      if (data.category === category) {
-        return data;
+    console.log(id);
+    const findProduct = dataObject.filter((pro) => {
+      if (pro.id.toString() === id) {
+        return pro;
       }
     });
-    setData(filter);
-
-    window.scrollTo(0, 0);
-  }, [category]);
+    console.log(findProduct);
+    setData(findProduct[0]);
+  }, []);
 
   return (
     <div className="flex flex-col gap-10">
-      <CategoryHeader />
-      <CategoryPage dataObject={data} />
+      <ProductHeader />
+      <div className="flex justify-center items-center">
+        <div className="w-11/12 md:w-customTabletWidth lg:w-customWidth">
+          {data && (
+            <ProductComponent
+              type={"left"}
+              key={data.id}
+              id={data.id}
+              img={data.img}
+              title={data.title}
+              des={data.des}
+              ifNew={data.ifNew}
+              price={data.price}
+            />
+          )}
+        </div>
+      </div>
       <CategoryList />
       <AdsComponent />
       <Footer />
@@ -105,4 +111,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Product;

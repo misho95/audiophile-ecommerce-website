@@ -29,9 +29,10 @@ export default {
         customTabletWidth: "770",
         w540: "540px",
         w445: "445px",
-        w327: "327px",
         px350: "350px",
+        w327: "327px",
         w223: "223px",
+        w120: "120px",
       },
       borderWidth: {
         px1: "1px",

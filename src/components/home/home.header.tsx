@@ -16,7 +16,7 @@ const HomeHeader = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Button type={"orange"} />
+            <Button type={"orange"} link="/" />
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import iconHamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 const HeaderNav = () => {
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="w-11/12 sm:w-full flex justify-between py-8 border-b-px1 border-white/20">
+      <div className="w-11/12 sm:w-full flex justify-between py-8 border-b-px1 border-white/20 bg-customBlack">
         <div className="flex gap-5">
           <button className="lg:hidden">
             <img src={iconHamburger} />
