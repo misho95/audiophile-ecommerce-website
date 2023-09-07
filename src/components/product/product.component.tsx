@@ -40,15 +40,18 @@ const ProductComponent = ({
       key={id}
       className="w-full md:h-h720 lg:h-h560 flex flex-col lg:flex-row gap-5"
     >
-      <div className=" lg:hidden w-full lg:w-1/2 bg-customGray">
+      <div className=" lg:hidden w-full lg:w-1/2 bg-customGray mb-10">
         <img
           src={img}
-          className="w-w327 md:w-full md:h-h365 lg:h-h560 object-contain"
+          className="w-w327 md:w-full md:h-h365 lg:h-h560 object-contain object-center"
         />
       </div>
       {type === "left" && (
         <div className="hidden lg:block lg:w-1/2 bg-customGray">
-          <img src={img} className="h-h560 w-full object-contain" />
+          <img
+            src={img}
+            className="h-h560 w-full object-contain object-center"
+          />
         </div>
       )}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center">
@@ -83,7 +86,10 @@ const ProductComponent = ({
       </div>
       {type === "right" && (
         <div className="hidden lg:block lg:w-1/2 bg-customGray">
-          <img src={img} className="h-h560 w-full object-contain" />
+          <img
+            src={img}
+            className="h-h560 w-full object-contain object-center"
+          />
         </div>
       )}
     </div>

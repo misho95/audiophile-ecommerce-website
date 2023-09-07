@@ -75,13 +75,11 @@ const Product = () => {
   const [data, setData] = useState<dataType | undefined>();
 
   useEffect(() => {
-    console.log(id);
     const findProduct = dataObject.filter((pro) => {
       if (pro.id.toString() === id) {
         return pro;
       }
     });
-    console.log(findProduct);
     setData(findProduct[0]);
   }, []);
 
