@@ -9,7 +9,7 @@ interface PropsType {
   ifNew: boolean;
   price: string;
   feat: string;
-  inBox: {};
+  inBox: { [key: string]: string };
   proImg: string[];
 }
 

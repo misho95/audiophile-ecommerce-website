@@ -1,5 +1,5 @@
 import ProductComponent from "./product.component";
-import { dataType } from "../../page/category";
+import { dataType } from "../../utils/zustand";
 
 interface PropsType {
   dataObject: dataType[] | undefined;
