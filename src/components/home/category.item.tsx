@@ -8,7 +8,7 @@ interface PropsType {
 
 const CategoryItem = ({ imgLink, category }: PropsType) => {
   return (
-    <div className="w-full h-full md:w-w223 md:h-h217 lg:h-h284 lg:w-px350 relative flex flex-col justify-center items-center bg-customGray p-6">
+    <div className="w-full h-full md:w-w223 md:h-h217 lg:h-h284 lg:w-px350 relative flex flex-col justify-center items-center bg-customGray p-1 md:p-6">
       <img src={imgLink} className="w-32 h-40 object-cover" />
       <div className="flex flex-col justify-center items-center w-full">
         <h1 className="font-semibold">{category.toUpperCase()}</h1>

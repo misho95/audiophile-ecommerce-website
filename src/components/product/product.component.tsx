@@ -61,6 +61,11 @@ const ProductComponent = ({
 
   return (
     <div key={id} className="flex flex-col gap-20">
+      <div>
+        <button onClick={() => window.history.back()} className="text-black/50">
+          Go back
+        </button>
+      </div>
       <div className="w-full md:h-h720 lg:h-h560 flex flex-col lg:flex-row gap-5">
         <div className=" lg:hidden w-full lg:w-1/2 bg-customGray mb-10">
           <img
