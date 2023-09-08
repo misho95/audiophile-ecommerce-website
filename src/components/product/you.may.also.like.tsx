@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 interface PropsType {
-  id: string;
+  id: string | undefined;
 }
 
 const YouMayAlsoLike = ({ id }: PropsType) => {
@@ -11,16 +11,24 @@ const YouMayAlsoLike = ({ id }: PropsType) => {
   const [data, setData] = useState<dataType[] | undefined>();
 
   useEffect(() => {
-    const filter = dataProduct.filter((dat) => {
-      if (dat.id !== +id) return dat;
-    });
+    if (id) {
+      const filter = dataProduct.filter((dat) => {
+        if (dat.id !== +id) return dat;
+      });
 
-    if (filter) {
-      setData(filter.slice(0, 3));
+      if (filter) {
+        setData(filter.slice(0, 3));
+      }
     }
   }, [id]);
 
-  const Product = ({ id, img, title }) => {
+  interface ProductPropsType {
+    id: number;
+    img: string;
+    title: string;
+  }
+
+  const Product = ({ id, img, title }: ProductPropsType) => {
     return (
       <div className="flex flex-col gap-5">
         <img src={img} className="rounded-md" />
