@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { shopCart } from "../../utils/zustand";
 
 interface PropsType {
   id: number;
@@ -25,6 +26,7 @@ const ProductComponent = ({
   inBox,
   proImg,
 }: PropsType) => {
+  const setCart = shopCart((state) => state.setCart);
   const [count, setCount] = useState(1);
 
   const increase = () => {
@@ -53,6 +55,17 @@ const ProductComponent = ({
     }
 
     return elements;
+  };
+
+  const addProductToCart = () => {
+    const product = {
+      id,
+      title,
+      img,
+      price,
+      quantity: count,
+    };
+    setCart(product);
   };
 
   useEffect(() => {
@@ -105,7 +118,10 @@ const ProductComponent = ({
                   +
                 </button>
               </div>
-              <button className="bg-customOrange text-white w-40 h-12">
+              <button
+                onClick={addProductToCart}
+                className="bg-customOrange text-white w-40 h-12"
+              >
                 Add To Cart
               </button>
             </div>

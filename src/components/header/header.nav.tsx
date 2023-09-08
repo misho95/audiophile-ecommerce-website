@@ -6,19 +6,24 @@ import iconHamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import { useEffect, useState } from "react";
 import CategoryList from "../home/category.list";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import CartComponent from "../cart/cart.component";
 
 const HeaderNav = () => {
   const [openNav, setOpenNav] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
     openNav
       ? disableBodyScroll(document.documentElement)
       : enableBodyScroll(document.documentElement);
-  }, [openNav]);
+    cartOpen
+      ? disableBodyScroll(document.documentElement)
+      : enableBodyScroll(document.documentElement);
+  }, [openNav, cartOpen]);
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="w-11/12 sm:w-full flex justify-between py-8 border-b-px1 border-white/20 bg-customBlack">
+      <div className="w-11/12 sm:w-full flex justify-between py-8 border-b-px1 border-white/20 bg-customBlack relative">
         <div className="flex gap-5">
           <button onClick={() => setOpenNav(!openNav)} className="lg:hidden">
             <img src={iconHamburger} />
@@ -33,9 +38,18 @@ const HeaderNav = () => {
           <HeaderNavLink link={"/category/speakers"} title={"SPEAKERS"} />
           <HeaderNavLink link={"/category/earphones"} title={"EARPHONES"} />
         </div>
-        <button className="text-white">
+        <button onClick={() => setCartOpen(!cartOpen)} className="text-white">
           <img src={Cart} />
         </button>
+        {cartOpen && (
+          <>
+            <div
+              onClick={() => setCartOpen(false)}
+              className="w-full h-screen bg-black/50 fixed left-0 top-custom z-20"
+            ></div>
+            <CartComponent />
+          </>
+        )}
       </div>
       {openNav && (
         <div className="bg-black/50 w-full h-full absolute top-20 z-50">

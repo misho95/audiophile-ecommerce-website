@@ -164,3 +164,67 @@ export const productData = create<productDataType>(() => ({
     },
   ],
 }));
+
+interface shopCartType {
+  cart: shopCartDataType[];
+  setCart: (arg: shopCartDataType) => void;
+  updateQuantity: (id: number, count: number) => void;
+  clearCart: () => void;
+}
+
+interface shopCartDataType {
+  id: number;
+  img: string;
+  title: string;
+  price: string;
+  quantity: number;
+}
+
+export const shopCart = create<shopCartType>((set) => ({
+  cart: [],
+  setCart: (obj: shopCartDataType) =>
+    set((state) => {
+      const findData = state.cart.find((c) => {
+        if (c.id === obj.id) {
+          return c;
+        }
+      });
+
+      if (findData) {
+        const updateCart = state.cart.map((c) => {
+          if (c.id === obj.id) {
+            return {
+              ...c,
+              quantity: c.quantity + obj.quantity,
+            };
+          } else {
+            return c;
+          }
+        });
+        return {
+          cart: updateCart,
+        };
+      } else {
+        return {
+          cart: [...state.cart, obj],
+        };
+      }
+    }),
+  updateQuantity: (id: number, count: number) =>
+    set((state) => {
+      const update = state.cart.map((data) => {
+        if (id === data.id) {
+          return {
+            ...data,
+            quantity: count,
+          };
+        } else {
+          return data;
+        }
+      });
+      return {
+        cart: update,
+      };
+    }),
+  clearCart: () => set({ cart: [] }),
+}));

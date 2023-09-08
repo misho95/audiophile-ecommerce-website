@@ -26,6 +26,9 @@ export default {
         h284: "284px",
         h217: "217px",
         h174: "174px",
+        h64: "64px",
+        h48: "48px",
+        h32: "32px",
       },
       width: {
         customWidth: "1110px",
@@ -34,10 +37,13 @@ export default {
         w540: "540px",
         w445: "445px",
         w395: "335px",
+        w377: "377px",
         px350: "350px",
         w327: "327px",
         w223: "223px",
         w120: "120px",
+        w96: "96px",
+        w64: "64px",
       },
       borderWidth: {
         px1: "1px",
@@ -46,6 +52,9 @@ export default {
         header_bg_mobile: "url('./assets/home/mobile/image-header.jpg')",
         header_bg_tablet: "url('./assets/home/tablet/image-header.jpg')",
         header_bg_desktop: "url('./assets/home/desktop/image-hero.jpg')",
+      },
+      spacing: {
+        custom: "90px",
       },
     },
   },
