@@ -7,6 +7,7 @@ import AdsComponent from "../components/ads.component";
 import Footer from "../components/footer";
 import { dataType } from "../utils/zustand";
 import { productData } from "../utils/zustand";
+import YouMayAlsoLike from "../components/product/you.may.also.like";
 
 const Product = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const Product = () => {
       }
     });
     setData(findProduct[0]);
-  }, []);
+  }, [id]);
 
   return (
     <div className="flex flex-col gap-10">
@@ -44,6 +45,7 @@ const Product = () => {
           )}
         </div>
       </div>
+      <YouMayAlsoLike id={id} />
       <CategoryList />
       <AdsComponent />
       <Footer />

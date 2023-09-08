@@ -7,10 +7,24 @@ import { useEffect, useState } from "react";
 import CategoryList from "../home/category.list";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import CartComponent from "../cart/cart.component";
+import { shopCart } from "../../utils/zustand";
 
 const HeaderNav = () => {
   const [openNav, setOpenNav] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
+  const cart = shopCart((state) => state.cart);
+
+  const calculateCartNumber = () => {
+    const reduceQuantity = cart.reduce((val, el) => {
+      return (val += el.quantity);
+    }, 0);
+    setCartCount(reduceQuantity);
+  };
+
+  useEffect(() => {
+    calculateCartNumber();
+  }, [cart]);
 
   useEffect(() => {
     openNav
@@ -38,8 +52,16 @@ const HeaderNav = () => {
           <HeaderNavLink link={"/category/speakers"} title={"SPEAKERS"} />
           <HeaderNavLink link={"/category/earphones"} title={"EARPHONES"} />
         </div>
-        <button onClick={() => setCartOpen(!cartOpen)} className="text-white">
+        <button
+          onClick={() => setCartOpen(!cartOpen)}
+          className="text-white relative"
+        >
           <img src={Cart} />
+          {cartCount !== 0 && (
+            <div className="text-sm bg-customOrange w-4 h-4 rounded-full absolute -top-1 -right-2 flex justify-center items-center">
+              {cartCount}
+            </div>
+          )}
         </button>
         {cartOpen && (
           <>
