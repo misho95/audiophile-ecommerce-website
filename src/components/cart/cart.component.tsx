@@ -1,5 +1,6 @@
 import CartItem from "./cart.items";
 import { shopCart } from "../../utils/zustand";
+import { Link } from "react-router-dom";
 
 const CartComponent = () => {
   const cart = shopCart((state) => state.cart);
@@ -70,7 +71,12 @@ const CartComponent = () => {
         <div className="text-black/50">Total</div>
         <div className="font-semibold">${calculateTotalPrice()}</div>
       </div>
-      <button className="bg-customOrange h-h48 text-white">CHECKOUT</button>
+      <Link
+        to={`${cart.length === 0 ? "" : "/checkout"}`}
+        className="bg-customOrange h-h48 text-white flex justify-center items-center"
+      >
+        CHECKOUT
+      </Link>
     </div>
   );
 };

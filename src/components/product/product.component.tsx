@@ -146,8 +146,8 @@ const ProductComponent = ({
           <div>{renderInBox()}</div>
         </div>
       </div>
-      <div className="h-fit md:h-h368 lg:h-h592 flex flex-col md:flex-row gap-10 justify-center">
-        <div className="h-h368 lg:h-h592 flex flex-col gap-5 justify-between">
+      <div className="h-fit md:h-h368 lg:h-h592 flex flex-col md:flex-row gap-10 justify-center ">
+        <div className="h-fit lg:h-h592 flex flex-col gap-5 justify-between ">
           <img
             src={proImg[0]}
             className="rounded-lg w-fit h-fit md:h-h174 lg:h-fit"
@@ -159,7 +159,7 @@ const ProductComponent = ({
         </div>
         <img
           src={proImg[2]}
-          className="w-fit h-fit md:w-w395 lg:w-w635 md:h-h368 lg:h-h592 rounded-lg mt-20 sm:mt-0"
+          className="w-fit h-fit md:w-w395 lg:w-w635 md:h-h368 lg:h-h592 rounded-lg "
         />
       </div>
     </div>
