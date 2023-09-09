@@ -5,7 +5,6 @@ import Cart from "../../assets/shared/desktop/icon-cart.svg";
 import iconHamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import { useEffect, useState } from "react";
 import CategoryList from "../home/category.list";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import CartComponent from "../cart/cart.component";
 import { shopCart } from "../../utils/zustand";
 
@@ -25,15 +24,6 @@ const HeaderNav = () => {
   useEffect(() => {
     calculateCartNumber();
   }, [cart]);
-
-  useEffect(() => {
-    openNav
-      ? disableBodyScroll(document.documentElement)
-      : enableBodyScroll(document.documentElement);
-    cartOpen
-      ? disableBodyScroll(document.documentElement)
-      : enableBodyScroll(document.documentElement);
-  }, [openNav, cartOpen]);
 
   return (
     <div className="flex justify-center items-center w-full">
@@ -74,8 +64,8 @@ const HeaderNav = () => {
         )}
       </div>
       {openNav && (
-        <div className="bg-black/50 w-full h-full absolute top-20 z-50">
-          <div className="bg-customGray w-full">
+        <div className=" w-full h-full absolute top-20 left-0 bottom-0 z-50 overflow-hidden">
+          <div className="bg-customGray w-full border-b-px1 border-black lg:hidden">
             <CategoryList />
           </div>
         </div>
