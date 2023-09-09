@@ -27,7 +27,7 @@ const CheckOut = () => {
     return result;
   }
 
-  const calculateTotalPrice = (plus) => {
+  const calculateTotalPrice = (plus: number) => {
     const reducePrice = cart.reduce((val, el) => {
       const price = el.price.slice(1);
       const newPrice = price.replace(",", "");

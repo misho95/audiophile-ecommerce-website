@@ -1,4 +1,10 @@
-const Input = ({ type, placeHolder, error }) => {
+interface PropsType {
+  type: string;
+  placeHolder: string;
+  error: boolean;
+}
+
+const Input = ({ type, placeHolder, error }: PropsType) => {
   return (
     <input
       type={type}
