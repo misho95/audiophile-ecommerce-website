@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { shopCart } from "../../utils/zustand";
+import Notification from "./notification";
 
 interface PropsType {
   id: number;
@@ -28,6 +29,8 @@ const ProductComponent = ({
 }: PropsType) => {
   const setCart = shopCart((state) => state.setCart);
   const [count, setCount] = useState(1);
+  const [notif, setNotif] = useState<React.ReactNode[]>([]);
+  const [uniqueKey, setUniqueKey] = useState(0);
 
   const increase = () => {
     setCount(count + 1);
@@ -66,6 +69,13 @@ const ProductComponent = ({
       quantity: count,
     };
     setCart(product);
+    handleAddComponent();
+  };
+
+  const handleAddComponent = () => {
+    const newComponent = <Notification key={uniqueKey} />;
+    setNotif((prevComponents) => [...prevComponents, newComponent]);
+    setUniqueKey(uniqueKey + 1);
   };
 
   useEffect(() => {
@@ -74,6 +84,11 @@ const ProductComponent = ({
 
   return (
     <div key={id} className="flex flex-col gap-20">
+      <div className="fixed bottom-0 right-0  w-60 flex flex-col gap-3 p-2 pointer-events-none">
+        {notif.map((c, index) => {
+          return <div key={index}>{c}</div>;
+        })}
+      </div>
       <div>
         <button onClick={() => window.history.back()} className="text-black/50">
           Go back
